@@ -60,7 +60,7 @@ def show_menu():
     ip = get_public_ip()
     status = colored("Ativo", "green") if check_process(script_name) else colored("Parado", "red")
     port = cache.get("port", None)
-    link = f'http://{ip}:{port}/check' if port else "Defina a porta primeiro."
+    link = f'http://{ip}:{port}/check?user=' if port else "Defina a porta primeiro."
 
     start_stop = colored("1 - Parar checkuser", "red") if check_process(script_name) else colored("1 - Iniciar checkuser", "green")
 
