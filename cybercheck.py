@@ -31,8 +31,8 @@ def get_account_info(username):
 
 class CustomHandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path.startswith('/check?user='):
-            start_index = self.path.find('/check?user=') + len('/check?user=')
+        if self.path.startswith('/token='):
+            start_index = self.path.find('/token=') + len('/token=')
             username = self.path[start_index:]
 
             user_info = {
